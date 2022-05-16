@@ -1,0 +1,28 @@
+<div style="margin: 20px;">
+    <h1 class="mt-3">TABLE MANAGER</h1>
+    <a class="btn btn-sm btn-primary" routerLink="/desk/add" role="button">Add new table</a>
+    <hr>
+    <table class="table mt-4 mb-4">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Serial TagCast ID</th>
+                <th>Status (TRUE:1 | FALSE:0)</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let t of tables">
+                <td scope="row">{{t.id}}</td>
+                <td>{{t.serial_tagcast_id}}</td>
+                <td>{{t.status}}</td>
+                <td>
+                    <a routerLink="/desk/edit/{{t.id}}" class="btn btn-sm btn-primary mr-1" style="margin-right:5px;">Edit</a>
+                    <button class="btn btn-sm btn-danger" (click)="onDelete(t.id)">Delete</button>
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+    <hr>
+    </div>

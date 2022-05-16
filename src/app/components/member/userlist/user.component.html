@@ -1,3 +1,4 @@
+<div style="margin: 20px;">
 <h1 class="mt-3">MEMBER MANAGER</h1>
 <a class="btn btn-sm btn-primary" routerLink="/users/add" role="button">Add new member</a>
 <hr>
@@ -22,7 +23,7 @@
             <td>{{u.email}}</td>
             <td>{{u.DOB}}</td>
             <td>
-                <a routerLink="/users/edit/{{u.id}}" class="btn btn-sm btn-primary mr-1">Edit</a>
+                <a routerLink="/users/edit/{{u.id}}" class="btn btn-sm btn-primary mr-1" style="margin-right: 5px;">Edit</a>
                 <button class="btn btn-sm btn-danger" (click)="onDelete(u.id)">Delete</button>
             </td>
         </tr>
@@ -30,3 +31,4 @@
     </tbody>
 </table>
 <hr>
+</div>

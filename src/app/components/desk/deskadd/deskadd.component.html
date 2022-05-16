@@ -1,0 +1,16 @@
+<div style="margin: 20px;">
+    <h1 class="mt-4">ADD NEW DESK</h1>
+    <hr>
+    <form action="" [formGroup]="deskForm" method="post" class="form mb-4" (submit)="onSubmit()">
+        <div class="form-group">
+            <label class="mr-3" for="">SERIAL TAGCAST ID</label>
+            <input type="text" class="form-control" formControlName="serial_tagcast_id" placeholder="ex: Nguyen Van A">
+            <div class="mb-3 text-danger" *ngIf="submited && f['serial_tagcast_id'].errors">Please do not leave it blank!</div>
+            <label class="mr-3" style="margin-top: 20px;" for="">STATUS (TRUE:1 | FALSE:0)</label>
+            <input type="number" class="form-control" formControlName="status" placeholder="TRUE:1 |  FALSE:0">
+            <div class="mb-3 text-danger" *ngIf="submited && f['status'].errors">Please do not leave it blank!</div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+    </div>

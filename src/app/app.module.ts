@@ -23,6 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddnewmemberComponent } from './components/member/addnewmember/addnewmember.component';
 import { EditmemberComponent } from './components/member/editmember/editmember.component';
+import { DesklistComponent } from './components/desk/desklist/desklist.component';
+import { DeskaddComponent } from './components/desk/deskadd/deskadd.component';
+import { DeskeditComponent } from './components/desk/deskedit/deskedit.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { EditmemberComponent } from './components/member/editmember/editmember.c
     DiskComponent,
     DetailBillComponent,
     AddnewmemberComponent,
-    EditmemberComponent
+    EditmemberComponent,
+    DesklistComponent,
+    DeskaddComponent,
+    DeskeditComponent
   ],
   imports: [
     BrowserModule,
