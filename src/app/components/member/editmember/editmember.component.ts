@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, RequiredValidator, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { query } from '@angular/animations';
-import { UserService } from 'src/app/user.service';
+import { UserService } from 'src/app/services/user.service';
+
 
 @Component({
   selector: 'app-editmember',
