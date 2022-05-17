@@ -1,7 +1,7 @@
 <div style="margin: 20px;">
 <div class="grid-container">
   <h1 class="mat-h1">BILL MANAGER</h1>
-  <button [routerLink]="['/bill/add']" routerLinkActive="router-link-active"  class="btn btn-sm btn-primary" style="width:'60px'; margin-bottom: 5px;">
+  <button [routerLink]="['/bill/add']" routerLinkActive="router-link-active"  class="btn btn-sm btn-primary" style="width:'100px'; margin-bottom: 5px;">
     Add New Bill
 </button>
 <hr>
@@ -29,7 +29,7 @@
                             <a routerLink="/bill/edit/{{b.id}}" class="btn btn-sm btn-primary mr-1" style="margin-right: 5px;">Edit</a>
 
                               <input type="hidden" name="_method" value="delete" >
-                              <button class="btn btn-sm btn-primary" style="width:'60px'" (click)="onDelete(b.id)">
+                              <button class="btn btn-sm btn-danger" style="width:'60px'" (click)="onDelete(b.id)">
                                   Delete
                               </button>
 
