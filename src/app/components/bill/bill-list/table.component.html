@@ -1,0 +1,41 @@
+<div style="margin: 20px;">
+<div class="grid-container">
+  <h1 class="mat-h1"> BILL</h1>
+  <button [routerLink]="['/bill/add']" routerLinkActive="router-link-active"  class="btn btn-sm btn-primary" style="width:'60px'; margin-bottom: 5px;">
+    Add Bill
+</button>
+<table class="table mt-4 mb-4 table table-hover table-bordered">
+                <thead>
+                    <tr class="text-center">
+                        <th>ID</th>
+                        <th>ID Order</th>
+                        <th>Desk ID</th>
+                        <th>User ID</th>
+                        <th>Time In</th>
+                        <th>Time out</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let b of bill">
+                        <th>{{b.id}}</th>
+                        <td>{{b.order_id}}</td>
+                        <td>{{b.desk_id}}</td>
+                        <td>{{b.user_id}}</td>
+                        <td>{{b.time_in}}</td>
+                        <td>{{b.time_out}}</td>
+                        <td class="d-flex border-0 align-items-center">
+                            <a routerLink="/bill/edit/{{b.id}}" class="btn btn-sm btn-primary mr-1" style="margin-right: 5px;">Edit</a>
+
+                              <input type="hidden" name="_method" value="delete" >
+                              <button class="btn btn-sm btn-primary" style="width:'60px'" (click)="onDelete(b.id)">
+                                  Delete
+                              </button>
+
+                      </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+

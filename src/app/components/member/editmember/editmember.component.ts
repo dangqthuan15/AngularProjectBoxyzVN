@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, RequiredValidator, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { query } from '@angular/animations';
 import { UserService } from 'src/app/services/user.service';
 
 
@@ -25,7 +24,7 @@ export class EditmemberComponent implements OnInit {
 
   constructor(
     private userSrv:UserService,
-    private formBuilder:FormBuilder, 
+    private formBuilder:FormBuilder,
     public router:Router,
     private actRouter:ActivatedRoute) { }
 
@@ -33,7 +32,7 @@ export class EditmemberComponent implements OnInit {
     this.actRouter.paramMap.subscribe(query=>{
       this.id= query.get("id");
       this.userSrv.getByID(this.id).subscribe(res => {
-      let userProfile = res;      
+      let userProfile = res;
       this.userForm = this.formBuilder.group({
         full_name:[userProfile.full_name,Validators.required],
         username:[userProfile.username,Validators.required],
