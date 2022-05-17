@@ -16,9 +16,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { UserComponent } from './components/member/userlist/user.component';
-import { TableComponent } from './components/bill/table.component';
+import { TableComponent } from './components/bill/bill-list/table.component';
 import { DiskComponent } from './desk/disk.component';
-import { DetailBillComponent } from './detail-bill/detail-bill.component';
+import { DetailBillComponent } from './components/bill/detail-bill/detail-bill.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddnewmemberComponent } from './components/member/addnewmember/addnewmember.component';
@@ -26,6 +26,7 @@ import { EditmemberComponent } from './components/member/editmember/editmember.c
 import { DesklistComponent } from './components/desk/desklist/desklist.component';
 import { DeskaddComponent } from './components/desk/deskadd/deskadd.component';
 import { DeskeditComponent } from './components/desk/deskedit/deskedit.component';
+import { AddbillComponent } from './components/bill/addbill/addbill.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { DeskeditComponent } from './components/desk/deskedit/deskedit.component
     EditmemberComponent,
     DesklistComponent,
     DeskaddComponent,
-    DeskeditComponent
+    DeskeditComponent,
+    AddbillComponent
   ],
   imports: [
     BrowserModule,

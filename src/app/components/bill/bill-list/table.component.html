@@ -1,7 +1,10 @@
 <div style="margin: 20px;">
 <div class="grid-container">
   <h1 class="mat-h1">Bill</h1>
-<div class="container mt-3">
+  <button [routerLink]="['/bill/add']" routerLinkActive="router-link-active"  class="btn btn-sm btn-warning" style="width:'60px'; margin-bottom: 5px;">
+    Add Bill
+</button>
+<div class="container">
     <div class="row">
         <div class="">
             <table class="table table-hover table-bordered">
@@ -17,22 +20,22 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="text-center">
-                        <th>1</th>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>2019-10-21 11:32:45</td>
-                        <td>2019-10-21 11:32:45</td>
+                    <tr *ngFor="let b of bill">
+                        <th>{{b.id}}</th>
+                        <td>{{b.order_id}}</td>
+                        <td>{{b.desk_id}}</td>
+                        <td>{{b.user_id}}</td>
+                        <td>{{b.time_in}}</td>
+                        <td>{{b.time_out}}</td>
                         <td class="d-flex border-0 align-items-center">
-                          <form action="/detail-bill" method="get">
-                              <button class="btn btn-sm btn-warning" style="width:'60px'">
+                          <form method="get">
+                              <button [routerLink]="['/bill/edit/:id']" routerLinkActive="router-link-active"  class="btn btn-sm btn-warning" style="width:'60px'">
                                   Edit
                               </button>
                           </form>
                           <form action="" method="post">
                               <input type="hidden" name="_method" value="delete" >
-                              <button class="btn btn-sm btn-danger" style="width:'60px'" (click)="onDelete()">
+                              <button class="btn btn-sm btn-danger" style="width:'60px'" (click)="onDelete(b.id)">
                                   Delete
                               </button>
                           </form>
