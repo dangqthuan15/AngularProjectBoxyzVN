@@ -7,13 +7,14 @@ import { BillServiceService } from 'src/app/services/bill-service.service';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit {
+
   bill:any;
 
   constructor(private billSrv:BillServiceService) { }
 
   getAllBill(){
     this.billSrv.getList().subscribe((res:any) => {
-    this.billSrv = res;
+    this.bill = res;
     })
   }
 

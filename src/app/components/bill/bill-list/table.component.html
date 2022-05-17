@@ -1,13 +1,10 @@
 <div style="margin: 20px;">
 <div class="grid-container">
-  <h1 class="mat-h1">Bill</h1>
-  <button [routerLink]="['/bill/add']" routerLinkActive="router-link-active"  class="btn btn-sm btn-warning" style="width:'60px'; margin-bottom: 5px;">
+  <h1 class="mat-h1"> BILL</h1>
+  <button [routerLink]="['/bill/add']" routerLinkActive="router-link-active"  class="btn btn-sm btn-primary" style="width:'60px'; margin-bottom: 5px;">
     Add Bill
 </button>
-<div class="container">
-    <div class="row">
-        <div class="">
-            <table class="table table-hover table-bordered">
+<table class="table mt-4 mb-4 table table-hover table-bordered">
                 <thead>
                     <tr class="text-center">
                         <th>ID</th>
@@ -28,23 +25,17 @@
                         <td>{{b.time_in}}</td>
                         <td>{{b.time_out}}</td>
                         <td class="d-flex border-0 align-items-center">
-                          <form method="get">
-                              <button [routerLink]="['/bill/edit/:id']" routerLinkActive="router-link-active"  class="btn btn-sm btn-warning" style="width:'60px'">
-                                  Edit
-                              </button>
-                          </form>
-                          <form action="" method="post">
+                            <a routerLink="/bill/edit/{{b.id}}" class="btn btn-sm btn-primary mr-1" style="margin-right: 5px;">Edit</a>
+
                               <input type="hidden" name="_method" value="delete" >
-                              <button class="btn btn-sm btn-danger" style="width:'60px'" (click)="onDelete(b.id)">
+                              <button class="btn btn-sm btn-primary" style="width:'60px'" (click)="onDelete(b.id)">
                                   Delete
                               </button>
-                          </form>
+
                       </td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-</div>
-</div>
-</div>
+

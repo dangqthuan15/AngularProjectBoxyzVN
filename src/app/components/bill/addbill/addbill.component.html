@@ -1,31 +1,25 @@
-<h1>Add Bill</h1>
-
-<ol style="margin-right:50px;">
-  <li class="li" style="margin-top:10px;">ID Bill </li>
-  <input type="text" class="form-control" placeholder="ID Bill">
-  <li class="li" style="margin-top:10px;">ID Order </li>
-  <input type="text" class="form-control" placeholder="ID Order">
-  <li class="li" style="margin-top:10px;">ID Table </li>
-  <input type="text" class="form-control" placeholder="ID Table">
-  <li class="li" style="margin-top:10px;">ID User</li>
-  <input type="text" class="form-control" placeholder="ID User">
-  <li class="li" style="margin-top:10px;">Time In </li>
-  <input type="text" class="form-control" placeholder="Time In">
-  <li class="li" style="margin-top:10px;">Time Out</li>
-  <input type="text" class="form-control" placeholder="Time Out">
-
-</ol>
-
-<mat-card-actions style="margin-top: 10px;">
-  <form action="" method="post">
-  <button class="btn btn-sm btn-danger" style="width:'60px'">
-    Add
-</button>
-</form>
-<form action="" method="get">
-  <button [routerLink]="['/bill']" routerLinkActive="router-link-active"  class="btn btn-sm btn-danger" style="width:'60px'; margin-top: 4px;">
-    Back
-</button>
-</form>
-</mat-card-actions>
-
+<div style="margin: 20px;">
+  <h1 class="mt-4">EDIT BILL</h1>
+  <hr>
+  <form action="" [formGroup]="billForm" method="post" class="form mb-4" (submit)="onSubmit()">
+      <div class="form-group">
+        <label class="mr-3" for="">ORDER ID</label>
+        <input type="text" class="form-control" formControlName="order_id">
+        <div class="mb-3 text-danger" *ngIf="submited && f['order_id'].errors">Please do not leave it blank!</div>
+        <label class="mr-3" style="margin-top: 20px;" for="">DESK ID</label>
+        <input type="text" class="form-control" formControlName="desk_id">
+        <div class="mb-3 text-danger" *ngIf="submited && f['desk_id'].errors">Please do not leave it blank!</div>
+        <label class="mr-3" style="margin-top: 20px;" for="">USER ID</label>
+        <input type="text" class="form-control" formControlName="user_id">
+        <div class="mb-3 text-danger" *ngIf="submited && f['user_id'].errors">Please do not leave it blank!</div>
+        <label class="mr-3" style="margin-top: 20px;" for="">TIME IN</label>
+        <input type="email" class="form-control" formControlName="time_in">
+        <div class="mb-3 text-danger" *ngIf="submited && f['time_in'].errors">Please check this email again!</div>
+        <label class="mr-3" style="margin-top: 20px;" for="">TIME OUT</label>
+        <input type="text" class="form-control" formControlName="time_out">
+        <div class="mb-3 text-danger" *ngIf="submited && f['time_out'].errors">Please do not leave it blank!</div>
+      </div>
+      <br>
+      <button type="submit" class="btn btn-primary">Add</button>
+  </form>
+  </div>

@@ -31,7 +31,6 @@ const routes: Routes = [
     {path:'edit/:id', component: DetailBillComponent}
   ]},
   {path: 'desk2', component: DiskComponent},
-  {path: 'detail-bill',component: DetailBillComponent}
 ];
 
 @NgModule({
