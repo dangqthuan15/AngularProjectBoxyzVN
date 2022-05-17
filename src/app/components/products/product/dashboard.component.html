@@ -1,0 +1,26 @@
+<h2>{{title}}</h2>
+ 
+<table class="table">
+    <thead>
+        <th>ID</th>
+        <th>name</th>
+        <th>price</th>
+        <th>status</th>
+        <th>imgurl</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of products">
+            <td scope="row">{{p.id}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.price}}</td>
+            <td>{{p.status}}</td>
+            <td>{{p.imgurl}}</td>
+            <td>
+                <a href="javascript:void(0)" class="btn btn-sm btn-primary"(click)="EditProducts(p.id)">Edit</a>
+                <a href="javascript:void(0)" class="btn btn-sm btn-danger"(click)="DeleteProducts(p.id)">Del</a>
+            </td>
+        </tr>
+        
+    </tbody>
+
+</table>
