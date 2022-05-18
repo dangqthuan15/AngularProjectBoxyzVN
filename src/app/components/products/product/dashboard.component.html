@@ -2,13 +2,13 @@
 <h1>{{title}}</h1>
 <a class="btn btn-sm btn-primary" routerLink="/product/add" role="button">Add new products</a>
  <hr>
-<table class="table">
+<table class="table mt-4 mb-4 table table-hover table-bordered">
     <thead>
         <th>ID</th>
-        <th>imgurl</th>
-        <th>name</th>
-        <th>price</th>
-        <th>status</th>
+        <th>Imgurl</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Status</th>
     </thead>
     <tbody>
         <tr *ngFor="let p of products">
