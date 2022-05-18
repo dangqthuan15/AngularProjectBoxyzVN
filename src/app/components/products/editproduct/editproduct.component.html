@@ -1,0 +1,27 @@
+<div style="margin: 20px;">
+    <h1>{{title}}</h1>
+    <hr>
+    <form action="" method="post" [formGroup]= "productAdd" class="form mb-4" (submit)="onSubmit()">
+        <hr>
+        <legend>From Product</legend>
+        <div class="form-group">
+            <label  class="mr-3" for="">Name</label>
+            <input type="text" class="form-control" formControlName="name" placeholder="Input Product">
+            <div class="mb-3 text-danger" *ngIf="submited && f['name'].errors">not space</div>
+            <label class="mr-3" for="">Price</label>
+            <input type="text" class="form-control" formControlName="price" placeholder="Input Price">
+            <div class="mb-3 text-danger" *ngIf="submited && f['price'].errors">not space</div>
+            <label class="mr-3" for="">Status</label>
+            <input type="text" class="form-control" formControlName="status" placeholder="Input Status (stocking:[1]):(not stocking:[0])">
+            <div class="mb-3 text-danger" *ngIf="submited && f['status'].errors">not space</div>
+            <label class="mr-3" for="">Imgurl</label>
+            <input type="text" class="form-control" formControlName="imgurl" placeholder="Input imgurl">
+            <div class="mb-3 text-danger" *ngIf="submited && f['imgurl'].errors">not space</div>
+    
+        </div>        
+        <br>
+        <button type="submit" class="btn btn-primary">Add Product</button>
+        
+    </form>
+    </div>
+    

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './product/dashboard.component';
+import { DashboardComponent } from './components/products/product/dashboard.component';
 import { DiskComponent } from './desk/disk.component';
 import { TableComponent } from './components/bill/bill-list/table.component';
 import { DetailBillComponent } from './components/bill/detail-bill/detail-bill.component';
@@ -11,10 +11,16 @@ import { DesklistComponent } from './components/desk/desklist/desklist.component
 import { DeskaddComponent } from './components/desk/deskadd/deskadd.component';
 import { DeskeditComponent } from './components/desk/deskedit/deskedit.component';
 import { AddbillComponent } from './components/bill/addbill/addbill.component';
+import { AddproductComponent } from './components/products/addproduct/addproduct.component';
+import { EditproductComponent } from './components/products/editproduct/editproduct.component';
 
 
 const routes: Routes = [
-  {path: 'product', component: DashboardComponent},
+  {path: 'product', children:[
+    {path:'', component: DashboardComponent},
+    {path:'add', component: AddproductComponent},
+    {path:'edit/:id', component: EditproductComponent}
+  ]},
   {path: 'users', children:[
     {path: '', component: UserComponent},
     {path:'add', component: AddnewmemberComponent},

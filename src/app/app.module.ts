@@ -11,7 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { DashboardComponent } from './product/dashboard.component';
+import { DashboardComponent } from './components/products/product/dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
@@ -27,6 +27,8 @@ import { DesklistComponent } from './components/desk/desklist/desklist.component
 import { DeskaddComponent } from './components/desk/deskadd/deskadd.component';
 import { DeskeditComponent } from './components/desk/deskedit/deskedit.component';
 import { AddbillComponent } from './components/bill/addbill/addbill.component';
+import { AddproductComponent } from './components/products/addproduct/addproduct.component';
+import { EditproductComponent } from './components/products/editproduct/editproduct.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { AddbillComponent } from './components/bill/addbill/addbill.component';
     DesklistComponent,
     DeskaddComponent,
     DeskeditComponent,
-    AddbillComponent
+    AddbillComponent,
+    AddproductComponent,
+    EditproductComponent
   ],
   imports: [
     BrowserModule,
