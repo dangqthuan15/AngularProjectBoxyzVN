@@ -9,8 +9,8 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit{
-  
-  title="Information Producst";
+
+  title="INFORMATION PRODUCT";
   products:any;
 
   constructor(private productSrv:ProductService) {}
@@ -27,8 +27,8 @@ export class DashboardComponent implements OnInit{
     this.callProducts();
   }
 
-  
-  
+
+
   EditProducts(id:number){
 
     //alert('Clicked on button Edit '+id)
