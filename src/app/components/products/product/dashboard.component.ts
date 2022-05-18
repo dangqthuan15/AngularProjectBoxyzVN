@@ -15,11 +15,16 @@ export class DashboardComponent implements OnInit{
 
   constructor(private productSrv:ProductService) {}
 
+  callProducts(){
 
-  ngOnInit(): void {
     this.productSrv.getlist().subscribe(res=>{
       this.products=res;
       console.log(this.products);})
+
+  }
+
+  ngOnInit(): void {
+    this.callProducts();
   }
 
   
@@ -32,8 +37,9 @@ export class DashboardComponent implements OnInit{
 
   DeleteProducts(id:number){
 
-    alert('Clicked on button Delete '+id)
+    this.productSrv.apcdelete(id).subscribe(res=>{this.callProducts(); console.log(res);})
 
+    alert('Clicked on button Delete '+id)
   }
 
   ngDestroy(){
