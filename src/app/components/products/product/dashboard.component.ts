@@ -31,7 +31,7 @@ export class DashboardComponent implements OnInit{
   
   EditProducts(id:number){
 
-    alert('Clicked on button Edit '+id)
+    //alert('Clicked on button Edit '+id)
 
   }
 

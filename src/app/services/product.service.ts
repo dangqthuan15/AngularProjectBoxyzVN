@@ -20,7 +20,6 @@ export class ProductService {
 
   getByIDproduct(id:any): Observable<any>{
     console.log(id);
-    
     return this.http.get<any>('http://127.0.0.1:8000/api/products/'+id);
   }
 
