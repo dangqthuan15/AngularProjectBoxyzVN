@@ -29,17 +29,11 @@ export class DashboardComponent implements OnInit{
 
 
 
-  EditProducts(id:number){
-
-    //alert('Clicked on button Edit '+id)
-
-  }
 
   DeleteProducts(id:number){
 
     this.productSrv.apcdelete(id).subscribe(res=>{this.callProducts(); console.log(res);})
 
-    alert('Clicked on button Delete '+id)
   }
 
   ngDestroy(){
