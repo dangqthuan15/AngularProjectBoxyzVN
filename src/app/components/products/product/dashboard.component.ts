@@ -10,7 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class DashboardComponent implements OnInit{
 
-  title="INFORMATION PRODUCT";
+  title="PRODUCT MANAGER";
   products:any;
 
   constructor(private productSrv:ProductService) {}
