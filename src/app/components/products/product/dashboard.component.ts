@@ -10,7 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class DashboardComponent implements OnInit{
 
-  title="INFORMATION PRODUCT";
+  title="PRODUCT MANAGER";
   products:any;
 
   constructor(private productSrv:ProductService) {}
@@ -29,17 +29,11 @@ export class DashboardComponent implements OnInit{
 
 
 
-  EditProducts(id:number){
-
-    //alert('Clicked on button Edit '+id)
-
-  }
 
   DeleteProducts(id:number){
 
     this.productSrv.apcdelete(id).subscribe(res=>{this.callProducts(); console.log(res);})
 
-    alert('Clicked on button Delete '+id)
   }
 
   ngDestroy(){
