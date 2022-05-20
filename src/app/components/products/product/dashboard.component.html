@@ -10,7 +10,6 @@
         <th>Name</th>
         <th>Price</th>
         <th>IsAvailable</th>
-        <th>Status</th>
         <th>Action</th>
         </tr>
     </thead>
@@ -18,7 +17,7 @@
         <tr *ngFor="let p of products">
             <td scope="row">{{p.id}}</td>
             <td>
-                <img src="{{p.imgurl}}" width="60">
+                <img src="{{p.imgUrl}}" width="60" height="60">
             </td>
             <td>{{p.name}}</td>
             <td>{{p.price}}</td>
