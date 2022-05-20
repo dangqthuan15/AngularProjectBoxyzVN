@@ -8,7 +8,7 @@
         <th>Imgurl</th>
         <th>Name</th>
         <th>Price</th>
-        <th>Status</th>
+        <th>IsAvailable</th>
     </thead>
     <tbody>
         <tr *ngFor="let p of products">
@@ -18,7 +18,7 @@
             </td>
             <td>{{p.name}}</td>
             <td>{{p.price}}</td>
-            <td>{{p.status}}</td>
+            <td>{{p.isAvailable}}</td>
             <td>
                 <a routerLink="/product/edit/{{p.id}}" class="btn btn-sm btn-primary"(click)="EditProducts(p.id)">Edit</a>
                 <a href="javascript:void(0)" class="btn btn-sm btn-danger"(click)="DeleteProducts(p.id)">Del</a>

@@ -11,16 +11,16 @@
         <label class="mr-3" for="">Price</label>
         <input type="text" class="form-control" formControlName="price" placeholder="Input Price">
         <div class="mb-3 text-danger" *ngIf="submited && f['price'].errors">not space</div>
-        <label class="mr-3" for="">Status</label>
-        <input type="text" class="form-control" formControlName="status" placeholder="Input Status (stocking:[1]):(not stocking:[0])">
+        <label class="mr-3" for="">IsAvailable</label>
+        <input type="text" class="form-control" formControlName="isAvailable" placeholder="Input true or false">
         <div class="mb-3 text-danger" *ngIf="submited && f['status'].errors">not space</div>
         <label class="mr-3" for="">Imgurl</label>
         <input type="text" class="form-control" formControlName="imgurl" placeholder="Input imgurl">
         <div class="mb-3 text-danger" *ngIf="submited && f['imgurl'].errors">not space</div>
 
-    </div>        
+    </div>
     <br>
     <button type="submit" class="btn btn-primary">Add Product</button>
-    
+
 </form>
 </div>

@@ -14,10 +14,10 @@ export class EditproductComponent implements OnInit {
   title="Edit Producst Information";
   id:any;
 
-  productAdd=this.fbproduct.group({   
+  productAdd=this.fbproduct.group({
     name:   ['',Validators.required],
     price:  ['',Validators.required],
-    status: ['',Validators.required],
+    isAvailable: ['',Validators.required],
     imgurl: ['',Validators.required],
   });
 
@@ -33,10 +33,10 @@ export class EditproductComponent implements OnInit {
       //console.log(query.get("id"));
       this.productSrv.getByIDproduct(this.id).subscribe(res=>{
         let productFrom = res;
-        this.productAdd=this.fbproduct.group({   
+        this.productAdd=this.fbproduct.group({
           name:   [productFrom.name,Validators.required],
           price:  [productFrom.price,Validators.required],
-          status: [productFrom.status,Validators.required],
+          isAvailable: [productFrom.status,Validators.required],
           imgurl: [productFrom.imgurl,Validators.required],
         });
       });

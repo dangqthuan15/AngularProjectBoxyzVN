@@ -12,10 +12,10 @@ export class AddproductComponent implements OnInit {
 
   title="Add Producst Information";
 
-  productAdd=this.fbproduct.group({   
+  productAdd=this.fbproduct.group({
     name:   ['',Validators.required],
     price:  ['',Validators.required],
-    status: ['',Validators.required],
+    isAvailable: ['',Validators.required],
     imgurl: ['',Validators.required],
   });
 
