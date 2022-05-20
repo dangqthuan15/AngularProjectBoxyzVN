@@ -4,7 +4,7 @@
     <form action="" [formGroup]="deskForm" method="post" class="form mb-4" (submit)="onSubmit()">
         <div class="form-group">
             <label class="mr-3" for="">SERIAL TAGCAST ID</label>
-            <input type="text" class="form-control" formControlName="serial_tagcast_id" placeholder="ex: Nguyen Van A">
+            <input type="text" class="form-control" formControlName="serial_tagcast_id" placeholder="ex: JPN-PPER-0086-3965-3189">
             <div class="mb-3 text-danger" *ngIf="submited && f['serial_tagcast_id'].errors">Please do not leave it blank!</div>
             <label class="mr-3" style="margin-top: 20px;" for="">STATUS (TRUE:1 | FALSE:0)</label>
             <input type="number" class="form-control" formControlName="status" placeholder="TRUE:1 |  FALSE:0">
