@@ -9,27 +9,23 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
-   // cac phuong thuc api
-  getlist():Observable<any>{
-    return this.http.get<any>('http://127.0.0.1:8000/api/products');
+  getList(): Observable<any> {
+    return this.http.post<any>('http://127.0.0.1:8000/api/products_list',{title:'Call API get list Products'});
   }
 
-  apcdelete(id:number):Observable<any>{
-    return this.http.delete<any>('http://127.0.0.1:8000/api/products/'+id);
+  getByID(id:any): Observable<any>{
+    return this.http.post<any>('http://127.0.0.1:8000/api/products/'+id,{title:'Call API getByID Products'});
   }
 
-  getByIDproduct(id:any): Observable<any>{
-    console.log(id);
-    return this.http.get<any>('http://127.0.0.1:8000/api/products/'+id);
+  delete(id:number): Observable<any>{
+    return this.http.post<any>('http://127.0.0.1:8000/api/products_delete/'+id,{title:'Call API delete Products'});
   }
 
-  apcadd(data:any):Observable<any>{
+  add(data:any): Observable<any>{
     return this.http.post<any>('http://127.0.0.1:8000/api/products/',data);
   }
 
   update(id:any, data:any): Observable<any>{
-    return this.http.put<any>('http://127.0.0.1:8000/api/products/'+id,data);
+    return this.http.post<any>('http://127.0.0.1:8000/api/products_edit/'+id,data);
   }
-
-
 }

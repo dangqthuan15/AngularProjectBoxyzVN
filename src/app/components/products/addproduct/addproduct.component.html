@@ -12,10 +12,10 @@
         <div class="mb-3 text-danger" *ngIf="submited && f['price'].errors">Please do not leave it blank!</div>
         <label class="mr-3"style="margin-top: 20px;" for="">IsAvailable</label>
         <input type="text" class="form-control" formControlName="isAvailable" placeholder="IsAvailable (stocking:[true]):(soldout:[false])">
-        <div class="mb-3 text-danger" *ngIf="submited && f['status'].errors">Please do not leave it blank!</div>
-        <label class="mr-3"style="margin-top: 20px;" for="">Imgurl</label>
-        <input type="text" class="form-control" formControlName="imgurl" placeholder="IMGurl">
-        <div class="mb-3 text-danger" *ngIf="submited && f['imgurl'].errors">Please do not leave it blank!</div>
+        <div class="mb-3 text-danger" *ngIf="submited && f['isAvailable'].errors">Please do not leave it blank!</div>
+        <label class="mr-3"style="margin-top: 20px;" for="">ImgURL</label>
+        <input type="text" class="form-control" formControlName="imgUrl" placeholder="imgUrl">
+        <div class="mb-3 text-danger" *ngIf="submited && f['imgUrl'].errors">Please do not leave it blank!</div>
 
 
     </div>

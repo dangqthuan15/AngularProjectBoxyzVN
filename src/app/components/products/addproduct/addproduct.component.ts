@@ -10,13 +10,11 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class AddproductComponent implements OnInit {
 
-  title="Add Producst Information";
-
   productAdd=this.fbproduct.group({
     name:   ['',Validators.required],
     price:  ['',Validators.required],
     isAvailable: ['',Validators.required],
-    imgurl: ['',Validators.required],
+    imgUrl: ['',Validators.required],
   });
 
   constructor(private productSrv:ProductService,
@@ -30,12 +28,11 @@ export class AddproductComponent implements OnInit {
 get f(){return this.productAdd.controls;}
 
 onSubmit():any{
-  //alert('Clicked on submit');
+
   this.submited=true;
   if(this.productAdd.invalid){return false;}
-  // them moi
-  console.log(this.productAdd.value);
-  this.productSrv.apcadd(this.productAdd.value).subscribe(res=>{this.routerProduct.navigate(['product'])});
+
+  this.productSrv.add(this.productAdd.value).subscribe(res=>{this.routerProduct.navigate(['product'])});
 }
 
 }

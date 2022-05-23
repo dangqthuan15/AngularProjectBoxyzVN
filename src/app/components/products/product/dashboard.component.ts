@@ -17,9 +17,8 @@ export class DashboardComponent implements OnInit{
 
   callProducts(){
 
-    this.productSrv.getlist().subscribe(res=>{
-      this.products=res;
-      console.log(this.products);})
+    this.productSrv.getList().subscribe(res=>{
+      this.products=res;})
 
   }
 
@@ -32,7 +31,7 @@ export class DashboardComponent implements OnInit{
 
   DeleteProducts(id:number){
 
-    this.productSrv.apcdelete(id).subscribe(res=>{this.callProducts(); console.log(res);})
+    this.productSrv.delete(id).subscribe(res=>{this.callProducts();})
 
   }
 
