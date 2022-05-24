@@ -1,10 +1,10 @@
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container class="sidenav-container" style="background-color: white; ">
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
       <mat-toolbar><img src="../assets/logoboxyz.png" width="150" height="65" alt=""></mat-toolbar>
-    <mat-nav-list class="nav-list">
+    <mat-nav-list class="nav-list" >
       <a mat-list-item [routerLink]="['/product']" routerLinkActive="router-link-active" >Product</a>
       <a mat-list-item [routerLink]="['/users']" routerLinkActive="router-link-active"  >User</a>
       <a mat-list-item [routerLink]="['/bill']" routerLinkActive="router-link-active" >Bill</a>
