@@ -37,6 +37,7 @@ const routes: Routes = [
     {path:'add',component:AddbillComponent},
     {path:'edit/:id', component: DetailBillComponent},
     {path:'billdetail/:id', component: BilldetailComponent},
+    {path: 'product/:id', component: DashboardComponent},
   ]},
   {path: 'desk2', component: DiskComponent},
 ];
