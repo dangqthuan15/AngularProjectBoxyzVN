@@ -2,21 +2,7 @@ import { query } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BillServiceService } from 'src/app/services/bill-service.service'; 
-
-
-// export class Detail_bill{
-//     constructor(
-//         public id:number,
-//         public products_id:number,
-//         public bill_id:number,
-//         public quantity:number,
-//         public total:number
-//     )
-//     {
-
-//     }
-// }
-
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-billdetail',
@@ -28,8 +14,14 @@ export class BilldetailComponent implements OnInit {
 
   id:any;
   infodetailbill:any;
+  products_detail:any;
+  productsArray:any[] = [];
+  total=0;
 
-  constructor(private detail_bill:BillServiceService,private router:ActivatedRoute) {
+
+  constructor(private detail_bill:BillServiceService,
+              private router:ActivatedRoute,
+              private productsSrv:ProductService,) {
        
    }
 
@@ -40,17 +32,17 @@ export class BilldetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //this.detail_bill.getbilldetail(this.id).subscribe(data=>{console.log(data)});
     this.router.paramMap.subscribe(query=>{
       this.id=query.get("id");
-      this.detail_bill.getbilldetail(this.id).subscribe(res=>{console.log(res);this.infodetailbill=res;
+      this.detail_bill.getbilldetail(this.id).subscribe(res=>{
+        this.infodetailbill=res;
+        for (let index = 0; index < res.length; index++) {
+          const element = res[index];
+          this.total+= element.total;
+        }
     })})
   }
 
-  onDelete(id:number){
-    this.detail_bill.delete(id).subscribe((res:any)=>{
-      this.getAllBill();
-    })
-  }
+  
 
 }
