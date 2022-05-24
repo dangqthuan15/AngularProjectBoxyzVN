@@ -23,7 +23,7 @@
             <td>{{p.price}}</td>
             <td>{{p.isAvailable}}</td>
             <td>
-                <a routerLink="/product/edit/{{p.id}}" class="btn btn-sm btn-primary">Edit</a>
+                <a routerLink="/product/edit/{{p.id}}" class="btn btn-sm btn-primary " style="margin-right: 5px;">Edit</a>
                 <a class="btn btn-sm btn-danger"(click)="DeleteProducts(p.id)">Delete</a>
             </td>
         </tr>
