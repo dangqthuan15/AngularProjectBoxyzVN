@@ -10,22 +10,22 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   getList(): Observable<any> {
-    return this.http.post<any>('http://192.168.1.7:8000/api/products_list',{title:'Call API get list Products'});
+    return this.http.post<any>('http://192.168.1.23:8000/api/products_list',{title:'Call API get list Products'});
   }
 
   getByID(id:any): Observable<any>{
-    return this.http.post<any>('http://192.168.1.7:8000/api/products/'+id,{title:'Call API getByID Products'});
+    return this.http.post<any>('http://192.168.1.23:8000/api/products/'+id,{title:'Call API getByID Products'});
   }
 
   delete(id:number): Observable<any>{
-    return this.http.post<any>('http://192.168.1.7:8000/api/products_delete/'+id,{title:'Call API delete Products'});
+    return this.http.post<any>('http://192.168.1.23:8000/api/products_delete/'+id,{title:'Call API delete Products'});
   }
 
   add(data:any): Observable<any>{
-    return this.http.post<any>('http://192.168.1.7:8000/api/products/',data);
+    return this.http.post<any>('http://192.168.1.23:8000/api/products/',data);
   }
 
   update(id:any, data:any): Observable<any>{
-    return this.http.post<any>('http://192.168.1.7:8000/api/products_edit/'+id,data);
+    return this.http.post<any>('http://192.168.1.23:8000/api/products_edit/'+id,data);
   }
 }
