@@ -3,9 +3,6 @@
   <hr>
   <form action="" [formGroup]="billForm" method="post" class="form mb-4" (submit)="onSubmit()">
       <div class="form-group">
-        <label class="mr-3" for="">ORDER ID</label>
-        <input type="text" class="form-control" formControlName="order_id">
-        <div class="mb-3 text-danger" *ngIf="submited && b['order_id'].errors">Please do not leave it blank!</div>
         <label class="mr-3" style="margin-top: 20px;" for="">DESK ID</label>
         <input type="text" class="form-control" formControlName="desk_id">
         <div class="mb-3 text-danger" *ngIf="submited && b['desk_id'].errors">Please do not leave it blank!</div>

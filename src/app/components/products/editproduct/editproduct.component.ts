@@ -18,7 +18,7 @@ export class EditproductComponent implements OnInit {
     name:   ['',Validators.required],
     price:  ['',Validators.required],
     isAvailable: ['',Validators.required],
-    imgurl: ['',Validators.required],
+    imgUrl: ['',Validators.required],
   });
 
   constructor(private productSrv:ProductService,

@@ -14,7 +14,6 @@ export class DetailBillComponent implements OnInit {
   id:any;
 
   billForm= this.formbuilder.group({
-    order_id:['',Validators.required],
     desk_id:['',Validators.required],
     user_id:['',Validators.required],
     time_in:['',Validators.required],
@@ -32,7 +31,6 @@ export class DetailBillComponent implements OnInit {
       this.billSrv.getByID(this.id).subscribe(res => {
       let billProfile = res;
       this.billForm = this.formbuilder.group({
-        order_id:[billProfile.order_id,Validators.required],
         desk_id:[billProfile.desk_id,Validators.required],
         user_id:[billProfile.user_id,Validators.required],
         time_in:[billProfile.time_in,Validators.required],

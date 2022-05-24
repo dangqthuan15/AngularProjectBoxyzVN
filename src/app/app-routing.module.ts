@@ -17,6 +17,7 @@ import { BilldetailComponent } from './components/bill/billdetail/billdetail.com
 
 
 const routes: Routes = [
+  {path:'', component: DesklistComponent},
   {path: 'product', children:[
     {path:'', component: DashboardComponent},
     {path:'add', component: AddproductComponent},
