@@ -10,22 +10,22 @@ export class DeskService {
   constructor(private http: HttpClient) { }
 
   getList(): Observable<any> {
-    return this.http.post<any>('http://192.168.1.7:8000/api/table_list',{title:'Call API get list Table'});
+    return this.http.post<any>('http://192.168.1.23:8000/api/table_list',{title:'Call API get list Table'});
   }
 
   getByID(id:any): Observable<any>{
-    return this.http.post<any>('http://192.168.1.7:8000/api/table/'+id,{title:'Call API getByID Table'});
+    return this.http.post<any>('http://192.168.1.23:8000/api/table/'+id,{title:'Call API getByID Table'});
   }
 
   delete(id:number): Observable<any>{
-    return this.http.post<any>('http://192.168.1.7:8000/api/table_delete/'+id,{title:'Call API delete Table'});
+    return this.http.post<any>('http://192.168.1.23:8000/api/table_delete/'+id,{title:'Call API delete Table'});
   }
 
   add(data:any): Observable<any>{
-    return this.http.post<any>('http://192.168.1.7:8000/api/table/',data);
+    return this.http.post<any>('http://192.168.1.23:8000/api/table/',data);
   }
 
   update(id:any, data:any): Observable<any>{
-    return this.http.post<any>('http://192.168.1.7:8000/api/table_edit/'+id,data);
+    return this.http.post<any>('http://192.168.1.23:8000/api/table_edit/'+id,data);
   }
 }
