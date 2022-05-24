@@ -13,6 +13,7 @@ import { DeskeditComponent } from './components/desk/deskedit/deskedit.component
 import { AddbillComponent } from './components/bill/addbill/addbill.component';
 import { AddproductComponent } from './components/products/addproduct/addproduct.component';
 import { EditproductComponent } from './components/products/editproduct/editproduct.component';
+import { BilldetailComponent } from './components/bill/billdetail/billdetail.component';
 
 
 const routes: Routes = [
@@ -34,7 +35,8 @@ const routes: Routes = [
   {path: 'bill', children:[
     {path:'',component: TableComponent},
     {path:'add',component:AddbillComponent},
-    {path:'edit/:id', component: DetailBillComponent}
+    {path:'edit/:id', component: DetailBillComponent},
+    {path:'billdetail/:id', component: BilldetailComponent},
   ]},
   {path: 'desk2', component: DiskComponent},
 ];

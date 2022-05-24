@@ -29,6 +29,7 @@ import { DeskeditComponent } from './components/desk/deskedit/deskedit.component
 import { AddbillComponent } from './components/bill/addbill/addbill.component';
 import { AddproductComponent } from './components/products/addproduct/addproduct.component';
 import { EditproductComponent } from './components/products/editproduct/editproduct.component';
+import { BilldetailComponent } from './components/bill/billdetail/billdetail.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { EditproductComponent } from './components/products/editproduct/editprod
     DeskeditComponent,
     AddbillComponent,
     AddproductComponent,
-    EditproductComponent
+    EditproductComponent,
+    BilldetailComponent
   ],
   imports: [
     BrowserModule,

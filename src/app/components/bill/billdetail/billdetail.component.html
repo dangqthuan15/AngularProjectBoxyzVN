@@ -1,0 +1,37 @@
+<div style="margin: 20px;">
+    <h1>BILL MANAGER</h1>
+    <a class="btn btn-sm btn-primary" routerLink="/bill/" role="button">Bill List</a>
+    <hr>
+    <table class="table mt-4 mb-4 table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Products Id</th>
+                            <th>Bill ID</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let info of infodetailbill">
+                            <th>{{info.id}}</th>
+                            <td>{{info.products_id}}</td>
+                            <td>{{info.bill_id}}</td>
+                            <td>{{info.quantity}}</td>
+                            <td>{{info.total}}</td>
+                            <td class="d-flex border-0 align-items-center">
+                                <a routerLink="/bill/edit/{{info.id}}" class="btn btn-sm btn-primary mr-1" style="margin-right: 5px;">Edit</a>
+                                  <input type="hidden" name="_method" value="delete" >
+                                  <button class="btn btn-sm btn-danger" style="width:'60px'" (click)="onDelete(info.id)">
+                                      Delete
+                                  </button>
+    
+                        </td> 
+                    </tr>
+                 </tbody>
+            </table>
+        <hr>
+    </div>
+    
+    
