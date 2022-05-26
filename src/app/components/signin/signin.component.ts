@@ -26,7 +26,7 @@ export class SigninComponent implements OnInit {
   }
 
   onSubmit():any{
-  
+
     this.usersSrv.login(this.signIn.value).subscribe(res=>{
       console.log(res.message)
         if(res.message == 'Success'){
@@ -36,6 +36,7 @@ export class SigninComponent implements OnInit {
           localStorage.setItem("email", res.user.email);
         } else {
           this.loginRouter.navigate(['']);
+
         }
     });
   }

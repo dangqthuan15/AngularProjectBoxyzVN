@@ -6,7 +6,7 @@
       [opened]="(isHandset$ | async) === false">
 
       <mat-toolbar><img src="../assets/logoboxyz.png" width="150" height="65" alt="" ></mat-toolbar>
-  <div id="menu" style="display:none;">
+
     <mat-nav-list class="nav-list" >
       <a mat-list-item [routerLink]="['/product']" routerLinkActive="router-link-active" >Product</a>
       <a mat-list-item [routerLink]="['/users']" routerLinkActive="router-link-active"  >User</a>
@@ -14,8 +14,8 @@
       <a mat-list-item [routerLink]="['/desk']" routerLinkActive="router-link-active"  >Desk</a>
       <a mat-list-item [routerLink]="['/logout']" routerLinkActive="router-link-active"  >Logout</a>
     </mat-nav-list>
-  </div>
-  <button onclick="myFunction()" class="btn btn-sm btn-primary mr-1" style="margin-left:75px;">MENU</button>
+
+
   </mat-sidenav>
   <mat-sidenav-content>
 
