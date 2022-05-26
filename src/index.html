@@ -10,20 +10,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("button").click(function(){
-    $("p").toggle();
-  });
-});
-</script>
+
 
 </head>
 <body class="mat-typography" >
   <!-- style="background-image: url('../assets/bgintro.png');"  -->
 
   <app-root ></app-root>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("menu");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    </script>
 </body>
 <script src="//code.jquery.com/jquery.js"></script>
         <!-- Bootstrap JavaScript -->
