@@ -31,6 +31,7 @@ import { AddproductComponent } from './components/products/addproduct/addproduct
 import { EditproductComponent } from './components/products/editproduct/editproduct.component';
 import { BilldetailComponent } from './components/bill/billdetail/billdetail.component';
 import { SigninComponent } from './components/signin/signin.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 
 
@@ -54,6 +55,7 @@ import { SigninComponent } from './components/signin/signin.component';
     EditproductComponent,
     BilldetailComponent,
     SigninComponent,
+    LogoutComponent,
 
   ],
   imports: [
