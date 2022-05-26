@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
 
@@ -12,7 +13,7 @@ export class UserComponent implements OnInit {
 
   users:any;
 
-  constructor(private userSrv:UserService) { }
+  constructor(private userSrv:UserService, private userRouter:Router) { }
 
   getAllUser(){
     this.userSrv.getList().subscribe((res:any) => {
@@ -21,6 +22,9 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if(localStorage.getItem("token") == null){
+      this.userRouter.navigate(['']);
+    }
     this.getAllUser();
   }
 

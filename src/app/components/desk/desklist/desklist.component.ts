@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DeskService } from 'src/app/services/desk.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { DeskService } from 'src/app/services/desk.service';
 export class DesklistComponent implements OnInit {
 
   tables:any;
-  constructor(private tableSrv:DeskService) { }
+  constructor(private tableSrv:DeskService, private tableRouter:Router) { }
 
   getAllDesk(){
     this.tableSrv.getList().subscribe((res:any)=>{
@@ -18,6 +19,9 @@ export class DesklistComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if(localStorage.getItem("token") == null){
+      this.tableRouter.navigate(['']);
+    }
     this.getAllDesk();
   }
 

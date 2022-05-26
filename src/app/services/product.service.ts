@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -10,22 +10,37 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   getList(): Observable<any> {
-    return this.http.post<any>('http://192.168.1.23:8000/api/products_list',{title:'Call API get list Products'});
+    let headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + localStorage.getItem("token") });
+    let options = { headers: headers };
+    return this.http.post<any>('http://192.168.1.23:8000/api/products_list',null, options);
   }
 
   getByID(id:any): Observable<any>{
-    return this.http.post<any>('http://192.168.1.23:8000/api/products/'+id,{title:'Call API getByID Products'});
+    let headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + localStorage.getItem("token") });
+    let options = { headers: headers };
+    return this.http.post<any>('http://192.168.1.23:8000/api/products/'+id,null, options);
   }
 
   delete(id:number): Observable<any>{
-    return this.http.post<any>('http://192.168.1.23:8000/api/products_delete/'+id,{title:'Call API delete Products'});
+    let headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + localStorage.getItem("token") });
+    let options = { headers: headers };
+    return this.http.post<any>('http://192.168.1.23:8000/api/products_delete/'+id,null, options);
   }
 
   add(data:any): Observable<any>{
-    return this.http.post<any>('http://192.168.1.23:8000/api/products/',data);
+    let headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + localStorage.getItem("token") });
+    let options = { headers: headers };
+    return this.http.post<any>('http://192.168.1.23:8000/api/products/',data,options);
   }
 
   update(id:any, data:any): Observable<any>{
-    return this.http.post<any>('http://192.168.1.23:8000/api/products_edit/'+id,data);
+    let headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + localStorage.getItem("token") });
+    let options = { headers: headers };
+    return this.http.post<any>('http://192.168.1.23:8000/api/products_edit/'+id,data,options);
   }
 }
