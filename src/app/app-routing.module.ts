@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/products/product/dashboard.component';
-import { DiskComponent } from './desk/disk.component';
 import { TableComponent } from './components/bill/bill-list/table.component';
 import { DetailBillComponent } from './components/bill/detail-bill/detail-bill.component';
 import { UserComponent } from './components/member/userlist/user.component';
@@ -47,7 +46,7 @@ const routes: Routes = [
     {path:'billdetail/:id', component: BilldetailComponent},
     {path: 'product/:id', component: DashboardComponent},
   ]},
-  {path: 'desk2', component: DiskComponent},
+
 ];
 
 @NgModule({

@@ -17,7 +17,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { UserComponent } from './components/member/userlist/user.component';
 import { TableComponent } from './components/bill/bill-list/table.component';
-import { DiskComponent } from './desk/disk.component';
 import { DetailBillComponent } from './components/bill/detail-bill/detail-bill.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -43,7 +42,6 @@ import { LogoutComponent } from './components/logout/logout.component';
     DashboardComponent,
     UserComponent,
     TableComponent,
-    DiskComponent,
     DetailBillComponent,
     AddnewmemberComponent,
     EditmemberComponent,
