@@ -27,7 +27,8 @@ export class SigninComponent implements OnInit {
 
   onSubmit():any{
 
-    this.usersSrv.login(this.signIn.value).subscribe(res=>{
+    this.usersSrv.login(this.signIn.value).subscribe(
+      res=>{
       console.log(res.message)
         if(res.message == 'Success'){
           this.loginRouter.navigate(['logout']);
@@ -36,8 +37,11 @@ export class SigninComponent implements OnInit {
           localStorage.setItem("email", res.user.email);
         } else {
           this.loginRouter.navigate(['']);
-
         }
+    }, err => {
+      alert('Please check Username/Password again!');
+
+
     });
   }
 
