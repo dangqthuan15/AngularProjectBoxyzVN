@@ -1,4 +1,4 @@
-
+<div>
 <mat-sidenav-container class="sidenav-container" style="background-color: white; ">
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
@@ -12,6 +12,7 @@
       <a mat-list-item [routerLink]="['/users']" routerLinkActive="router-link-active"  >User</a>
       <a mat-list-item [routerLink]="['/bill']" routerLinkActive="router-link-active" >Bill</a>
       <a mat-list-item [routerLink]="['/desk']" routerLinkActive="router-link-active"  >Desk</a>
+      <a mat-list-item [routerLink]="['/logout']" routerLinkActive="router-link-active"  >Logout</a>
     </mat-nav-list>
   </div>
   <button onclick="myFunction()" class="btn btn-sm btn-primary mr-1" style="margin-left:75px;">MENU</button>
@@ -21,6 +22,7 @@
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
+</div>
 
 
 
