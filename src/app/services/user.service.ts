@@ -29,4 +29,8 @@ export class UserService {
   update(id:any, data:any): Observable<any>{
     return this.http.post<any>('http://192.168.1.23:8000/api/users_edit/'+id,data);
   }
+
+  login(data:any): Observable<any>{
+    return this.http.post<any>('http://192.168.1.23:8000/api/login/',data);
+  }
 }

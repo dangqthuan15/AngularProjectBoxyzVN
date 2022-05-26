@@ -4,10 +4,10 @@
   <div ><img src="../assets/logoboxyz.png" width="220" height="100" alt="" >
   </div>
   <div class="form-box" style="margin-top:30px ;">
-  <form action="" method="">
-  <input type="text" placeholder="Username">
-  <input type="password" placeholder="Password">
-  <button class="btn btn-block login" style="margin-top:35px ; background-color: #01408f; color: white;" >Login</button>
+  <form action="" method="post" [formGroup]= "signIn" (submit)="onSubmit()">
+  <input type="text" formControlName="username" class="form-control" placeholder="Username">
+  <input type="password" formControlName="password" class="form-control" placeholder="Password">
+  <button class="btn btn-block login" style="margin-top:35px ; background-color: #01408f; color: white;">LOGIN</button>
   </form>
   </div>
   </div>
