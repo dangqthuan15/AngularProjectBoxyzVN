@@ -30,6 +30,10 @@ import { AddbillComponent } from './components/bill/addbill/addbill.component';
 import { AddproductComponent } from './components/products/addproduct/addproduct.component';
 import { EditproductComponent } from './components/products/editproduct/editproduct.component';
 import { BilldetailComponent } from './components/bill/billdetail/billdetail.component';
+import { SigninComponent } from './components/signin/signin.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -48,7 +52,9 @@ import { BilldetailComponent } from './components/bill/billdetail/billdetail.com
     AddbillComponent,
     AddproductComponent,
     EditproductComponent,
-    BilldetailComponent
+    BilldetailComponent,
+    SigninComponent,
+
   ],
   imports: [
     BrowserModule,
