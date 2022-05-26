@@ -16,9 +16,9 @@
                         <tr *ngFor="let info of infodetailbill" >
                             <td><img src="{{info.img}}" width="60" height="60"></td>
                             <td>{{info.name}}</td>
-                            <td>{{info.price}}</td>
+                            <td>${{info.price}}</td>
                             <td>{{info.quantity}}</td>
-                            <td>{{info.total}}</td>
+                            <td>${{info.total}}</td>
                         </tr>
                         <tr>  
                             <td colspan="4" style="background-color: lightgrey ;"></td>

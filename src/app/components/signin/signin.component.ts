@@ -29,7 +29,6 @@ export class SigninComponent implements OnInit {
 
     this.usersSrv.login(this.signIn.value).subscribe(
       res=>{
-      console.log(res.message)
         if(res.message == 'Success'){
           this.loginRouter.navigate(['logout']);
           localStorage.setItem("token", res.token);

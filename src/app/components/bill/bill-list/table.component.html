@@ -16,19 +16,19 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let b of bill">
-                        <th>{{b.id}}</th>
+                        <td>{{b.id}}</td>
                         <td>{{b.desk_id}}</td>
                         <td>{{b.user_id}}</td>
                         <td>{{b.time_in}}</td>
                         <td>{{b.time_out}}</td>
                         <td><a routerLink="/bill/billdetail/{{b.id}}" class="btn btn-sm btn-primary mr-1" style="margin-right: 5px;">Bill Detail</a>
                         </td>
-                        <td class="d-flex border-0 align-items-center">
-                            <a routerLink="/bill/edit/{{b.id}}" class="btn btn-sm btn-primary mr-1" style="margin-right: 5px;">Edit</a>
-                              <input type="hidden" name="_method" value="delete" >
-                              <button class="btn btn-sm btn-danger" style="width:'60px'" (click)="onDelete(b.id)">
-                                  Delete
-                              </button>
+                    <td class="d-flex border-0 align-items-center">
+                        <a routerLink="/bill/edit/{{b.id}}" class="btn btn-sm btn-primary mr-1" style="margin-right: 5px;">Edit</a>
+                        <input type="hidden" name="_method" value="delete" >
+                        <button class="btn btn-sm btn-danger" style="width:'60px'" (click)="onDelete(b.id)">
+                         Delete
+                        </button>
 
                     </td>
                 </tr>
