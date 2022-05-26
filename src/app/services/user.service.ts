@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -10,27 +10,54 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
+  
+
   getList(): Observable<any> {
-    return this.http.post<any>('http://192.168.1.23:8000/api/users_list',{title:'Call API get list Users'});
+    let headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + localStorage.getItem("token") });
+    let options = { headers: headers };
+    return this.http.post<any>('http://192.168.1.23:8000/api/users_list',null,options);
   }
 
   getByID(id:any): Observable<any>{
-    return this.http.post<any>('http://192.168.1.23:8000/api/users/'+id,{title:'Call API getByID User'});
+    let headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + localStorage.getItem("token") });
+    let options = { headers: headers };
+    return this.http.post<any>('http://192.168.1.23:8000/api/users/'+id,null,options);
   }
 
   delete(id:number): Observable<any>{
-    return this.http.post<any>('http://192.168.1.23:8000/api/users_delete/'+id,{title:'Call API delete User'});
+    let headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + localStorage.getItem("token") });
+    let options = { headers: headers };
+    return this.http.post<any>('http://192.168.1.23:8000/api/users_delete/'+id,null,options);
   }
 
   add(data:any): Observable<any>{
-    return this.http.post<any>('http://192.168.1.23:8000/api/users/',data);
+    let headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + localStorage.getItem("token") });
+    let options = { headers: headers };
+    return this.http.post<any>('http://192.168.1.23:8000/api/users/',data,options);
   }
 
   update(id:any, data:any): Observable<any>{
-    return this.http.post<any>('http://192.168.1.23:8000/api/users_edit/'+id,data);
+    let headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + localStorage.getItem("token") });
+    let options = { headers: headers };
+    return this.http.post<any>('http://192.168.1.23:8000/api/users_edit/'+id,data,options);
   }
 
   login(data:any): Observable<any>{
-    return this.http.post<any>('http://192.168.1.23:8000/api/login/',data);
+    let headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + localStorage.getItem("token") });
+    let options = { headers: headers };
+    return this.http.post<any>('http://192.168.1.23:8000/api/login/',data,options);
+  }
+
+  logout(): Observable<any>{
+    let headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + localStorage.getItem("token") });
+    let options = { headers: headers };
+    return this.http.post<any>('http://192.168.1.23:8000/api/logout/',null, options);
   }
 }

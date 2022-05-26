@@ -20,6 +20,9 @@ export class SigninComponent implements OnInit {
               private fbuser:FormBuilder,
               private loginRouter:Router) { }
   ngOnInit(): void {
+    if(localStorage.getItem("token") != null){
+      this.loginRouter.navigate(['logout']);
+    }
   }
 
   onSubmit():any{
@@ -27,8 +30,10 @@ export class SigninComponent implements OnInit {
     this.usersSrv.login(this.signIn.value).subscribe(res=>{
       console.log(res.message)
         if(res.message == 'Success'){
-          this.loginRouter.navigate(['product']);
+          this.loginRouter.navigate(['logout']);
           localStorage.setItem("token", res.token);
+          localStorage.setItem("name", res.user.full_name);
+          localStorage.setItem("email", res.user.email);
         } else {
           this.loginRouter.navigate(['']);
         }
