@@ -36,7 +36,7 @@ export class EditmemberComponent implements OnInit {
       this.userForm = this.formBuilder.group({
         full_name:[userProfile.full_name,Validators.required],
         username:[userProfile.username,Validators.required],
-        password:[userProfile.password,Validators.required],
+        password:['',Validators.required],
         email:[userProfile.email,Validators.required],
         DOB : [userProfile.DOB,Validators.required]
       });
