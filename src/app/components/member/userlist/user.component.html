@@ -15,7 +15,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let u of users">
-            <td scope="row">{{u.id}}</td>
+            <th scope="row">{{u.id}}</th>
             <td routerLink="/users/edit/{{u.id}}">{{u.full_name}}</td>
             <td routerLink="/users/edit/{{u.id}}">{{u.username}}</td>
             <td routerLink="/users/edit/{{u.id}}">{{u.email}}</td>

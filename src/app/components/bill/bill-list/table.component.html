@@ -15,7 +15,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let b of bill">
-                        <td routerLink="/bill/billdetail/{{b.id}}">{{b.id}}</td>
+                        <th routerLink="/bill/billdetail/{{b.id}}" style="color: blue;">{{b.id}}</th>
                         <td routerLink="/bill/edit/{{b.id}}">{{b.desk_id}}</td>
                         <td routerLink="/bill/edit/{{b.id}}">{{b.user_id}}</td>
                         <td routerLink="/bill/edit/{{b.id}}">{{b.time_in}}</td>

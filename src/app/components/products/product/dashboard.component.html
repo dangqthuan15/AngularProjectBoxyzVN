@@ -15,13 +15,13 @@
     </thead>
     <tbody>
         <tr *ngFor="let p of products">
-            <td scope="row">{{p.id}}</td>
-            <td>
+            <th scope="row">{{p.id}}</th>
+            <td routerLink="/product/edit/{{p.id}}">
                 <img src="{{p.imgUrl}}" width="60" height="60">
             </td>
             <td routerLink="/product/edit/{{p.id}}"> {{p.name}}</td>
-            <td>{{p.price}}</td>
-            <td>{{p.isAvailable}}</td>
+            <td routerLink="/product/edit/{{p.id}}">{{p.price}}</td>
+            <td routerLink="/product/edit/{{p.id}}">{{p.isAvailable}}</td>
             <td>
                 <a class="btn btn-sm btn-danger"(click)="DeleteProducts(p.id)">Delete</a>
             </td>

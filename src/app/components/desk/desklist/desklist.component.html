@@ -12,7 +12,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let t of tables">
-                <td scope="row">{{t.id}}</td>
+                <th scope="row">{{t.id}}</th>
                 <td routerLink="/desk/edit/{{t.id}}">{{t.serial_tagcast_id}}</td>
                 <td routerLink="/desk/edit/{{t.id}}">{{t.status}}</td>
             </tr>
