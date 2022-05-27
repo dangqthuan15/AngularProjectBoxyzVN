@@ -6,9 +6,11 @@
             <label class="mr-3" for="">SERIAL TAGCAST ID</label>
             <input type="text" class="form-control" formControlName="serial_tagcast_id" placeholder="ex: JPN-PPER-0086-3965-3189">
             <div class="mb-3 text-danger" *ngIf="submited && f['serial_tagcast_id'].errors">Please do not leave it blank!</div>
-            <label class="mr-3" style="margin-top: 20px;" for="">STATUS (TRUE:1 | FALSE:0)</label>
-            <input type="number" class="form-control" formControlName="status" placeholder="TRUE:1 |  FALSE:0">
-            <div class="mb-3 text-danger" *ngIf="submited && f['status'].errors">Please do not leave it blank!</div>
+            <label class="mr-3" for="" style="margin-top:20px ;">TABLE STATUS</label>
+            <select id="input" class="form-control" formControlName="status" >
+                <option value="1">Available</option>
+                <option value="0">Unavailable</option>
+            </select>
         </div>
         <br>
         <button type="submit" class="btn btn-primary">Add</button>
