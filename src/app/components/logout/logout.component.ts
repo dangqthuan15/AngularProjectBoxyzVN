@@ -24,7 +24,7 @@ export class LogoutComponent implements OnInit {
     } else {
       this.usersSrv.checkExp().subscribe(res=>{
         if(res.message == 'available'){
-        this.logoutRouter.navigate(['logout']);
+        return;
       }else if(res.error == 'An error occurred'){
         localStorage.removeItem("token");
         localStorage.removeItem("name");
