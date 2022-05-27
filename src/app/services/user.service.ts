@@ -60,4 +60,11 @@ export class UserService {
     let options = { headers: headers };
     return this.http.post<any>('http://192.168.1.23:8000/api/logout/',null, options);
   }
+
+  checkExp(): Observable<any>{
+    let headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + localStorage.getItem("token") });
+    let options = { headers: headers };
+    return this.http.post<any>('http://192.168.1.23:8000/api/test/',null, options);
+  }
 }
