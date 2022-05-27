@@ -8,17 +8,13 @@
                 <th>ID</th>
                 <th>Serial TagCast ID</th>
                 <th>Status (TRUE:1 | FALSE:0)</th>
-                <th>Action</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let t of tables">
                 <td scope="row">{{t.id}}</td>
-                <td>{{t.serial_tagcast_id}}</td>
-                <td>{{t.status}}</td>
-                <td>
-                    <a routerLink="/desk/edit/{{t.id}}" class="btn btn-sm btn-primary mr-1" style="margin-right:5px;">Edit</a>
-                </td>
+                <td routerLink="/desk/edit/{{t.id}}">{{t.serial_tagcast_id}}</td>
+                <td routerLink="/desk/edit/{{t.id}}">{{t.status}}</td>
             </tr>
 
         </tbody>
