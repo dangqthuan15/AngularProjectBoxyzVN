@@ -14,6 +14,12 @@ export class DesklistComponent implements OnInit {
 
   getAllDesk(){
     this.tableSrv.getList().subscribe((res:any)=>{
+      for (let index = 0; index < res.length; index++) {
+        const element = res[index];
+        if(element.status == 0){
+          element.status = 'Unavailable';
+        } else {element.status = 'Available';}
+      }
       this.tables = res;
     })
   }
