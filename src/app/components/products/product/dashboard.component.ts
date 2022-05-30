@@ -13,14 +13,20 @@ export class DashboardComponent implements OnInit{
 
   title="PRODUCT MANAGER";
   products:any;
-
   constructor(private productSrv:ProductService, private productsRouter:Router) {}
 
   callProducts(){
 
     this.productSrv.getList().subscribe(res=>{
-      this.products=res;})
-
+      console.log(res);
+      this.products=res;
+      for(let i=0;i<res.length;i++)
+      {
+          const a = res[i];  //const (la hang so)// const a = res[i];//khoi can khai bao a:any
+          console.log(a);
+          if(a.isAvailable=='true'){a.isAvailable="con"}else{a.isAvailable="het"}
+      }
+    })
   }
 
   ngOnInit(): void {
@@ -29,10 +35,6 @@ export class DashboardComponent implements OnInit{
     }
     this.callProducts();
   }
-
-
-
-
   DeleteProducts(id:number){
 
     this.productSrv.delete(id).subscribe(res=>{this.callProducts();})

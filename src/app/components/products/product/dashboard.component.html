@@ -14,7 +14,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let p of products">
+        <tr *ngFor="let p of products" style="text-align:center">
             <th scope="row">{{p.id}}</th>
             <td routerLink="/product/edit/{{p.id}}">
                 <img src="{{p.imgUrl}}" width="60" height="60">
