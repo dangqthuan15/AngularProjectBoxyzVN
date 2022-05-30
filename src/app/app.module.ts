@@ -11,25 +11,50 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { DashboardComponent } from './product/dashboard.component';
+import { DashboardComponent } from './components/products/product/dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
-import { UsersComponent } from './users/users.component';
-import { TableComponent } from './bill/table.component';
-import { DiskComponent } from './desk/disk.component';
-import { DetailBillComponent } from './detail-bill/detail-bill.component';
+import { UserComponent } from './components/member/userlist/user.component';
+import { TableComponent } from './components/bill/bill-list/table.component';
+import { DetailBillComponent } from './components/bill/detail-bill/detail-bill.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddnewmemberComponent } from './components/member/addnewmember/addnewmember.component';
+import { EditmemberComponent } from './components/member/editmember/editmember.component';
+import { DesklistComponent } from './components/desk/desklist/desklist.component';
+import { DeskaddComponent } from './components/desk/deskadd/deskadd.component';
+import { DeskeditComponent } from './components/desk/deskedit/deskedit.component';
+import { AddbillComponent } from './components/bill/addbill/addbill.component';
+import { AddproductComponent } from './components/products/addproduct/addproduct.component';
+import { EditproductComponent } from './components/products/editproduct/editproduct.component';
+import { BilldetailComponent } from './components/bill/billdetail/billdetail.component';
+import { SigninComponent } from './components/signin/signin.component';
+import { LogoutComponent } from './components/logout/logout.component';
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     DashboardComponent,
-    UsersComponent,
+    UserComponent,
     TableComponent,
-    DiskComponent,
-    DetailBillComponent
+    DetailBillComponent,
+    AddnewmemberComponent,
+    EditmemberComponent,
+    DesklistComponent,
+    DeskaddComponent,
+    DeskeditComponent,
+    AddbillComponent,
+    AddproductComponent,
+    EditproductComponent,
+    BilldetailComponent,
+    SigninComponent,
+    LogoutComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -44,7 +69,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

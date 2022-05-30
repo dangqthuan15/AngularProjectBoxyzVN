@@ -1,0 +1,32 @@
+<div style="margin: 20px;">
+    <h1>DETAIL BILL {{id}}</h1>
+    <a class="btn btn-sm btn-primary" routerLink="/bill/" role="button">Bill List</a>
+    <hr>
+    <table class="table mt-4 mb-4 table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Picture</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let info of infodetailbill" >
+                            <td><img src="{{info.img}}" width="60" height="60"></td>
+                            <td>{{info.name}}</td>
+                            <td>${{info.price}}</td>
+                            <td>{{info.quantity}}</td>
+                            <td>${{info.total}}</td>
+                        </tr>
+                        <tr>  
+                            <td colspan="4" style="background-color: lightgrey ;"></td>
+                            <td colspan="1" style="text-align:left;"><b>TOTAL: ${{total}}</b> </td>  
+                          </tr> 
+                 </tbody>
+            </table>
+        <hr>
+    </div>
+    
+    

@@ -1,0 +1,22 @@
+<div style="margin: 20px;">
+<h1 class="mt-4">EDIT MEMBER INFOMATION</h1>
+<hr>
+<form action="" [formGroup]="userForm" method="post" class="form mb-4" (submit)="onSubmit()">
+    <div class="form-group">
+        <label class="mr-3" for="">FULL NAME</label>
+        <input type="text" class="form-control" formControlName="full_name" placeholder="ex: Nguyen Van A">
+        <div class="mb-3 text-danger" *ngIf="submited && f['full_name'].errors">Please do not leave it blank!</div>
+        <label class="mr-3" style="margin-top: 20px;" for="">USERNAME</label>
+        <input type="text" class="form-control" formControlName="username" placeholder="ex: abc123">
+        <div class="mb-3 text-danger" *ngIf="submited && f['username'].errors">Please do not leave it blank!</div>
+        <label class="mr-3" style="margin-top: 20px;" for="">EMAIL</label>
+        <input type="email" class="form-control" formControlName="email" placeholder="ex: nguyenvana@abc123.com">
+        <div class="mb-3 text-danger" *ngIf="submited && f['email'].errors">Please check this email again!</div>
+        <label class="mr-3" style="margin-top: 20px;" for="">DOB</label>
+        <input type="text" class="form-control" formControlName="DOB" placeholder="ex: yyyy-MM-dd">
+        <div class="mb-3 text-danger" *ngIf="submited && f['DOB'].errors">Please do not leave it blank!</div>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+</div>

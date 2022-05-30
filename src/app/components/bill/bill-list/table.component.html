@@ -1,0 +1,35 @@
+<div style="margin: 20px;">
+<h1>BILL MANAGER</h1>
+<a class="btn btn-sm btn-primary" href="/bill" role="button">Refresh</a>
+<hr>
+<table class="table mt-4 mb-4 table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Desk ID</th>
+                        <th>User ID</th>
+                        <th>Time In</th>
+                        <th>Time out</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let b of bill">
+                        <th routerLink="/bill/billdetail/{{b.id}}" style="color: blue;">{{b.id}}</th>
+                        <td routerLink="/bill/edit/{{b.id}}">{{b.desk_id}}</td>
+                        <td routerLink="/bill/edit/{{b.id}}">{{b.user_id}}</td>
+                        <td routerLink="/bill/edit/{{b.id}}">{{b.time_in}}</td>
+                        <td routerLink="/bill/edit/{{b.id}}">{{b.time_out}}</td>
+                    <td class="d-flex border-0 align-items-center">
+                        <input type="hidden" name="_method" value="delete" >
+                        <button class="btn btn-sm btn-danger" style="width:'60px'" (click)="onDelete(b.id)">
+                         Delete
+                        </button>
+
+                    </td>
+                </tr>
+             </tbody>
+        </table>
+    <hr>
+</div>
+

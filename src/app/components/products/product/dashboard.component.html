@@ -1,0 +1,34 @@
+<div style="margin: 20px;">
+<h1>{{title}}</h1>
+<a class="btn btn-sm btn-primary" routerLink="/product/add" role="button">Add new products</a>
+ <hr>
+<table class="table mt-4 mb-4 table-hover table-bordered">
+    <thead>
+        <tr>
+        <th>ID</th>
+        <th>Picture</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>IsAvailable</th>
+        <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of products">
+            <th scope="row">{{p.id}}</th>
+            <td routerLink="/product/edit/{{p.id}}">
+                <img src="{{p.imgUrl}}" width="60" height="60">
+            </td>
+            <td routerLink="/product/edit/{{p.id}}"> {{p.name}}</td>
+            <td routerLink="/product/edit/{{p.id}}">{{p.price}}</td>
+            <td routerLink="/product/edit/{{p.id}}">{{p.isAvailable}}</td>
+            <td>
+                <a class="btn btn-sm btn-danger"(click)="DeleteProducts(p.id)">Delete</a>
+            </td>
+        </tr>
+
+    </tbody>
+
+</table>
+<hr>
+</div>

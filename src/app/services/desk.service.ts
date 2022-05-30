@@ -5,50 +5,42 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class BillServiceService {
+export class DeskService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   getList(): Observable<any> {
     let headers = new HttpHeaders({
       'Authorization': 'Bearer ' + localStorage.getItem("token") });
     let options = { headers: headers };
-    return this.http.post<any>('http://192.168.1.23:8000/api/bill_list',null, options);
+    return this.http.post<any>('http://192.168.1.23:8000/api/table_list',null, options);
   }
 
   getByID(id:any): Observable<any>{
     let headers = new HttpHeaders({
       'Authorization': 'Bearer ' + localStorage.getItem("token") });
     let options = { headers: headers };
-    return this.http.post<any>('http://192.168.1.23:8000/api/bill/'+id,null, options);
+    return this.http.post<any>('http://192.168.1.23:8000/api/table/'+id,null, options);
   }
 
   delete(id:number): Observable<any>{
     let headers = new HttpHeaders({
       'Authorization': 'Bearer ' + localStorage.getItem("token") });
     let options = { headers: headers };
-    return this.http.post<any>('http://192.168.1.23:8000/api/bill_delete/'+id,null, options);
+    return this.http.post<any>('http://192.168.1.23:8000/api/table_delete/'+id,null, options);
   }
 
   add(data:any): Observable<any>{
     let headers = new HttpHeaders({
       'Authorization': 'Bearer ' + localStorage.getItem("token") });
     let options = { headers: headers };
-    return this.http.post<any>('http://192.168.1.23:8000/api/bill/',data,options);
+    return this.http.post<any>('http://192.168.1.23:8000/api/table/',data,options);
   }
 
   update(id:any, data:any): Observable<any>{
     let headers = new HttpHeaders({
       'Authorization': 'Bearer ' + localStorage.getItem("token") });
     let options = { headers: headers };
-    return this.http.post<any>('http://192.168.1.23:8000/api/bill_edit/'+id,data,options);
+    return this.http.post<any>('http://192.168.1.23:8000/api/table_edit/'+id,data,options);
   }
-
-  getbilldetail(id:any):Observable<any>{
-    let headers = new HttpHeaders({
-      'Authorization': 'Bearer ' + localStorage.getItem("token") });
-    let options = { headers: headers };
-    return this.http.post<any>('http://192.168.1.23:8000/api/bill_detail/'+id,null, options);
-  }
-
 }
