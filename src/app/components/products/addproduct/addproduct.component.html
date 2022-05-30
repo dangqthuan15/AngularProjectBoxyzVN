@@ -10,8 +10,11 @@
         <label class="mr-3"style="margin-top: 20px;" for="">Price</label>
         <input type="text" class="form-control" formControlName="price" placeholder="Price">
         <div class="mb-3 text-danger" *ngIf="submited && f['price'].errors">Please do not leave it blank!</div>
-        <label class="mr-3"style="margin-top: 20px;" for="">IsAvailable</label>
-        <input type="text" class="form-control" formControlName="isAvailable" placeholder="IsAvailable (stocking:[true]):(soldout:[false])">
+        <label class="mr-3" for="" style="margin-top:20px ;">isAvailable</label>
+            <select id="" class="form-control" formControlName="isAvailable" >
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select>
         <div class="mb-3 text-danger" *ngIf="submited && f['isAvailable'].errors">Please do not leave it blank!</div>
         <label class="mr-3"style="margin-top: 20px;" for="">ImgURL</label>
         <input type="text" class="form-control" formControlName="imgUrl" placeholder="imgUrl">
