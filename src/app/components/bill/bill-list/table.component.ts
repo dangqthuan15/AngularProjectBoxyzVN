@@ -27,7 +27,7 @@ export class TableComponent implements OnInit {
     this.getAllBill();
   }
   onDelete(id:number){
-    this.billSrv.delete(id).subscribe((res:any)=>{
+    this.billSrv.delete({id_request: id}).subscribe((res:any)=>{
       this.getAllBill();
     })
   }

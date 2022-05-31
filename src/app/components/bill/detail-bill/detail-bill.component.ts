@@ -28,14 +28,17 @@ export class DetailBillComponent implements OnInit {
   ngOnInit(): void {
     this.actRoute.paramMap.subscribe(query=>{
       this.id= query.get("id");
-      this.billSrv.getByID(this.id).subscribe(res => {
+      this.billSrv.getByID({id_request: this.id}).subscribe(res => {
       let billProfile = res;
       this.billForm = this.formbuilder.group({
         desk_id:[billProfile.desk_id,Validators.required],
         user_id:[billProfile.user_id,Validators.required],
         time_in:[billProfile.time_in,Validators.required],
-        time_out:[billProfile.time_out,Validators.required]
+        time_out:[billProfile.time_out,Validators.required],
+        id_request: [this.id]
       });
+      console.log(this.billForm);
+      
       })
     })
   }
@@ -45,7 +48,7 @@ export class DetailBillComponent implements OnInit {
 
     if(this.billForm.invalid){return false;}
 
-    this.billSrv.update(this.id ,this.billForm.value).subscribe(res=>{
+    this.billSrv.update(this.billForm.value).subscribe(res=>{
       this.router.navigate(['bill'])
     })
   }

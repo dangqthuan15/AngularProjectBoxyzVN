@@ -32,7 +32,7 @@ export class DesklistComponent implements OnInit {
   }
 
   onDelete(id:number){
-    this.tableSrv.delete(id).subscribe((res:any)=>{
+    this.tableSrv.delete({id_request: id}).subscribe((res:any)=>{
       this.getAllDesk();
     })
   }

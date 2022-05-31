@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit{
 
   DeleteProducts(id:number){
 
-    this.productSrv.delete(id).subscribe(res=>{this.callProducts();})
+    this.productSrv.delete({id_request: id}).subscribe(res=>{this.callProducts();})
 
   }
 
