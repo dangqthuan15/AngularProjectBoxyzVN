@@ -34,7 +34,7 @@ export class BilldetailComponent implements OnInit {
   ngOnInit(): void {
     this.router.paramMap.subscribe(query=>{
       this.id=query.get("id");
-      this.detail_bill.getbilldetail(this.id).subscribe(res=>{
+      this.detail_bill.getbilldetail({id_request: this.id}).subscribe(res=>{
         this.infodetailbill=res;
         for (let index = 0; index < res.length; index++) {
           const element = res[index];

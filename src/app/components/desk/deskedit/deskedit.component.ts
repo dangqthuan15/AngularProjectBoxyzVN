@@ -27,11 +27,12 @@ export class DeskeditComponent implements OnInit {
   ngOnInit(): void {
     this.actRouter.paramMap.subscribe(query=>{
       this.id= query.get("id");
-      this.tableSrv.getByID(this.id).subscribe(res => {
+      this.tableSrv.getByID({id_request: this.id}).subscribe(res => {
       let tableProfile = res;      
       this.deskForm = this.formBuilder.group({
         serial_tagcast_id:[tableProfile.serial_tagcast_id,Validators.required],
         status:[tableProfile.status,Validators.required],
+        id_request: [this.id],
       });
       })
     })
@@ -43,7 +44,7 @@ export class DeskeditComponent implements OnInit {
 
     if(this.deskForm.invalid){return false;}
 
-    this.tableSrv.update(this.id ,this.deskForm.value).subscribe(res=>{
+    this.tableSrv.update(this.deskForm.value).subscribe(res=>{
       this.router.navigate(['desk'])
     })
   }

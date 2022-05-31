@@ -29,7 +29,7 @@ export class UserComponent implements OnInit {
   }
 
   onDelete(id:number){
-    this.userSrv.delete(id).subscribe((res:any)=>{
+    this.userSrv.delete({id_request: id}).subscribe((res:any)=>{
       this.getAllUser();
     })
   }
