@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes,CanActivate } from '@angular/router';
 import { DashboardComponent } from './components/products/product/dashboard.component';
 import { TableComponent } from './components/bill/bill-list/table.component';
 import { DetailBillComponent } from './components/bill/detail-bill/detail-bill.component';
@@ -15,36 +15,65 @@ import { EditproductComponent } from './components/products/editproduct/editprod
 import { BilldetailComponent } from './components/bill/billdetail/billdetail.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { LogoutComponent } from './components/logout/logout.component';
-
+import { RoleGuardService as RoleGuard } from './services/role-guard-service.service';
 
 
 const routes: Routes = [
-
-
 
   {path:'', component: SigninComponent},
   {path:'logout',component:LogoutComponent},
   {path: 'product', children:[
     {path:'', component: DashboardComponent},
-    {path:'add', component: AddproductComponent},
-    {path:'edit/:id', component: EditproductComponent}
+    {path:'add', component: AddproductComponent,
+    canActivate:[RoleGuard],
+    data:{ 
+      expectedRole: 'admin'
+    }},
+    {path:'edit/:id', component: EditproductComponent,
+    canActivate:[RoleGuard],
+    data:{ 
+      expectedRole: 'admin'
+    }}
   ]},
   {path: 'users', children:[
     {path: '', component: UserComponent},
-    {path:'add', component: AddnewmemberComponent},
-    {path:'edit/:id', component: EditmemberComponent},
+    {path:'add', component: AddnewmemberComponent,
+    canActivate:[RoleGuard],
+    data:{ 
+      expectedRole: 'admin'
+    }},
+    {path:'edit/:id', component: EditmemberComponent,
+    canActivate:[RoleGuard],
+    data:{ 
+      expectedRole: 'admin'
+    }},
   ]},
   {path: 'desk', children:[
     {path: '', component: DesklistComponent},
-    {path:'add', component: DeskaddComponent},
-    {path:'edit/:id', component: DeskeditComponent},
+    {path:'add', component: DeskaddComponent,
+    canActivate:[RoleGuard],
+    data:{ 
+      expectedRole: 'admin'
+    }},
+    {path:'edit/:id', component: DeskeditComponent,
+    canActivate:[RoleGuard],
+    data:{ 
+      expectedRole: 'admin'
+    }},
   ]},
   {path: 'bill', children:[
     {path:'',component: TableComponent},
-    {path:'add',component:AddbillComponent},
-    {path:'edit/:id', component: DetailBillComponent},
+    {path:'add',component:AddbillComponent,
+    canActivate:[RoleGuard],
+    data:{ 
+      expectedRole: 'admin'
+    }},
+    {path:'edit/:id', component: DetailBillComponent,
+    canActivate:[RoleGuard],
+    data:{ 
+      expectedRole: 'admin'
+    }},
     {path:'billdetail/:id', component: BilldetailComponent},
-    {path: 'product/:id', component: DashboardComponent},
   ]},
 
 ];

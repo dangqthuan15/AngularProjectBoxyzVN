@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BillServiceService } from 'src/app/services/bill-service.service';
+import decode from 'jwt-decode';
 
 @Component({
   selector: 'app-table',
@@ -27,9 +28,14 @@ export class TableComponent implements OnInit {
     this.getAllBill();
   }
   onDelete(id:number){
+    const token:any = localStorage.getItem("token");
+    const tokenPayload:any = decode(token);
+    if(tokenPayload.roles == 'admin'){
     this.billSrv.delete({id_request: id}).subscribe((res:any)=>{
       this.getAllBill();
-    })
+    })} else {
+      alert('For ADMIN permissions only!');
+    }
   }
 
 }
