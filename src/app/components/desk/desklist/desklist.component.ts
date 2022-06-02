@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DeskService } from 'src/app/services/desk.service';
+import decode from 'jwt-decode';
 
 @Component({
   selector: 'app-desklist',
@@ -32,9 +33,14 @@ export class DesklistComponent implements OnInit {
   }
 
   onDelete(id:number){
+    const token:any = localStorage.getItem("token");
+    const tokenPayload:any = decode(token);
+    if(tokenPayload.roles == 'admin'){
     this.tableSrv.delete({id_request: id}).subscribe((res:any)=>{
       this.getAllDesk();
-    })
+    })} else {
+      alert('For ADMIN permissions only!');
+    }
   }
 
 }
