@@ -3,6 +3,7 @@ import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { ProductService } from 'src/app/services/product.service';
 import { Router } from '@angular/router';
+import decode from 'jwt-decode';
 
 @Component({
   selector: 'app-dashboard',
@@ -30,17 +31,17 @@ export class DashboardComponent implements OnInit{
     this.callProducts();
   }
 
-
-
-
   DeleteProducts(id:number){
-
-    this.productSrv.delete(id).subscribe(res=>{this.callProducts();})
-
+    const token:any = localStorage.getItem("token");
+    const tokenPayload:any = decode(token);
+    if(tokenPayload.roles == 'admin'){
+    this.productSrv.delete({id_request: id}).subscribe((res:any)=>{
+      this.callProducts();
+    })} else {
+      alert('For ADMIN permissions only!');
+    }
   }
 
-  ngDestroy(){
 
-  }
 
 }

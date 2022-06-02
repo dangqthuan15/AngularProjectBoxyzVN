@@ -30,13 +30,14 @@ export class EditmemberComponent implements OnInit {
   ngOnInit(): void {
     this.actRouter.paramMap.subscribe(query=>{
       this.id= query.get("id");
-      this.userSrv.getByID(this.id).subscribe(res => {
+      this.userSrv.getByID({id_request: this.id}).subscribe(res => {
       let userProfile = res;
       this.userForm = this.formBuilder.group({
         full_name:[userProfile.full_name,Validators.required],
         username:[userProfile.username,Validators.required],
         email:[userProfile.email,Validators.required],
-        DOB : [userProfile.DOB,Validators.required]
+        DOB : [userProfile.DOB,Validators.required],
+        id_request: [this.id]
       });
       })
     })
@@ -49,7 +50,7 @@ export class EditmemberComponent implements OnInit {
     if(this.userForm.invalid){return false;}
 
     console.log(this.userForm.value);
-    this.userSrv.update(this.id ,this.userForm.value).subscribe(res=>{
+    this.userSrv.update(this.userForm.value).subscribe(res=>{
       this.router.navigate(['users'])
     })
   }

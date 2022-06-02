@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
-
+import decode from 'jwt-decode';
 
 
 @Component({
@@ -29,9 +29,14 @@ export class UserComponent implements OnInit {
   }
 
   onDelete(id:number){
-    this.userSrv.delete(id).subscribe((res:any)=>{
+    const token:any = localStorage.getItem("token");
+    const tokenPayload:any = decode(token);
+    if(tokenPayload.roles == 'admin'){
+    this.userSrv.delete({id_request: id}).subscribe((res:any)=>{
       this.getAllUser();
-    })
+    })} else {
+      alert('For ADMIN permissions only!');
+    }
   }
 
 }

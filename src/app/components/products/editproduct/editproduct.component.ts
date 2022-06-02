@@ -31,13 +31,14 @@ export class EditproductComponent implements OnInit {
     this.routerGet.paramMap.subscribe(query=>{
       this.id = query.get("id");
       //console.log(query.get("id"));
-      this.productSrv.getByID(this.id).subscribe(res=>{
+      this.productSrv.getByID({id_request: this.id}).subscribe(res=>{
         let productFrom = res;
         this.productAdd=this.fbproduct.group({
           name:   [productFrom.name,Validators.required],
           price:  [productFrom.price,Validators.required],
           isAvailable: [productFrom.isAvailable,Validators.required],
           imgUrl: [productFrom.imgUrl,Validators.required],
+          id_request: [this.id],
         });
       });
     })
@@ -51,7 +52,7 @@ onSubmit():any{
   if(this.productAdd.invalid){return false;}
   // them moi
   console.log(this.productAdd.value);
-  this.productSrv.update(this.id,this.productAdd.value).subscribe(res=>{this.routerProduct.navigate(['product'])});
+  this.productSrv.update(this.productAdd.value).subscribe(res=>{this.routerProduct.navigate(['product'])});
 
 }
 
